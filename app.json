@@ -5,7 +5,7 @@
     "scheme": "unibearapp",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon/uni.png",
+    "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/splash.png",

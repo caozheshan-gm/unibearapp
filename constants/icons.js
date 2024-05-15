@@ -12,6 +12,8 @@ import eyeHide from "../assets/icons/eye-hide.png";
 import eye from "../assets/icons/eye.png";
 import play from "../assets/icons/play.png";
 
+import uni from "../assets/icons/uni.png";
+
 export default {
   play,
   bookmark,
@@ -26,4 +28,6 @@ export default {
   logout,
   eyeHide,
   eye,
+
+  uni,
 };
