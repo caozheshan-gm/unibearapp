@@ -57,7 +57,7 @@ const TabsLayout= () => {
         }}
         />
 
-        <Tabs.Screen 
+        {/* <Tabs.Screen 
         name="create" 
         options={{title: 'Create',
         headerShown: true,
@@ -85,7 +85,7 @@ const TabsLayout= () => {
           />      
         )
         }}
-        />
+        /> */}
 
         <Tabs.Screen 
         name="profile" 
@@ -96,6 +96,21 @@ const TabsLayout= () => {
             icon={icons.profile}
             color={color}
             name="Profile"
+            focused={focused}
+          />      
+        )
+        }}
+        />
+
+        <Tabs.Screen 
+        name="scan" 
+        options={{title: 'Scan',
+        headerShown: true,
+        tabBarIcon: ({color,focused}) => (
+          <TabIcon 
+            icon={icons.uni}
+            color={color}
+            name="Scan"
             focused={focused}
           />      
         )

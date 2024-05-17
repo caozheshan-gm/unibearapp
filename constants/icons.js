@@ -13,6 +13,7 @@ import eye from "../assets/icons/eye.png";
 import play from "../assets/icons/play.png";
 
 import uni from "../assets/icons/uni.png";
+import odi from "../assets/icons/odi.png";
 
 export default {
   play,
@@ -30,4 +31,5 @@ export default {
   eye,
 
   uni,
+  odi,
 };
