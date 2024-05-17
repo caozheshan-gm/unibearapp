@@ -13,11 +13,11 @@ export default function App() {
     <SafeAreaView className="bg-primary2 h-full">
       <ScrollView contentContainerStyle={{height:'1'}}>
         <View className="w-full flex justify-center items-center min-h-[85vh] px-4">
-          <Image 
+          {/* <Image 
             source = {icons.uni}
             className="w-[130px] h-[84px]"
             resizeMode='contain'
-          />
+          /> */}
           
           <Image 
             source = {icons.odi}
@@ -42,12 +42,27 @@ export default function App() {
                 containerStyles="w-full mt-7"
               />
             </View>
+            <View>
+              <CustomButton
+                title="Sign Up"
+                handlePress={() => router.push("/sign-up")}
+                containerStyles="w-full mt-7"
+              />
+            </View>
+
+            <View>
+              <CustomButton
+                title="Scan QR code"
+                handlePress={() => router.push("/scan")}
+                containerStyles="w-full mt-7"
+              />
+            </View>
           </View>
           
           
-          <Link href="/sign-in">Sign In</Link>
-          <Link href="/sign-up">Sign Up</Link>
-          <Link href="/scan">scan QR code</Link>
+          
+          
+          
         </View>
         {/* <StatusBar backgroundColor="#161622" style="light" /> */}
       </ScrollView>
