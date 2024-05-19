@@ -19,6 +19,9 @@ const FormField = ({title,value,placeholder,handleChangeText,otherStyle,...props
         placeholderTextColor="#7b7b8b"
         onChangeText={handleChangeText}
         secureTextEntry={!showPassword && title === 'Password'}
+
+        keyboardType={props.keyboardType} // Pass the keyboardType prop
+        {...props} // Spread the remaining props to the TextInput
         />
         {title === "Password" && (
           <TouchableOpacity onPress={() => setShowPassword(!showPassword)}>

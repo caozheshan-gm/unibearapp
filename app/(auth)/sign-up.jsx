@@ -11,7 +11,7 @@ const SignUp = () => {
 
 
   const [form,setForm] = useState({
-    email: '',
+    phone: '',
     password: '',
   })
 
@@ -20,6 +20,13 @@ const SignUp = () => {
   }
 
   const [isSubmitting, setIsSubmitting] = useState(false)
+
+
+  // Function to handle phone number input changes
+  const handlePhoneChange = (text) => {
+    const numericText = text.replace(/[^0-9]/g, ''); // Remove non-numeric characters
+    setForm({ ...form, phone: numericText });
+  };
 
   return (
     <SafeAreaView className="bg-primary2 h-full">
@@ -40,10 +47,11 @@ const SignUp = () => {
           />
 
           <FormField
-            title="Email"
-            value={form.email}
-            handleChangeText={(e) => setForm({ ...form, email: e })}
-            otherStyles="mt-10"       
+            title="Phone Number"
+            value={form.phone}
+            handleChangeText={handlePhoneChange}
+            otherStyles="mt-10" 
+            keyboardType="phone-pad"      
           />
 
           <FormField

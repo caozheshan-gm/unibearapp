@@ -37,7 +37,7 @@ export default function App() {
             />
             <View>
               <CustomButton
-                title="Continue with Email"
+                title="Continue with Phone Number"
                 handlePress={() => router.push("/sign-in")}
                 containerStyles="w-full mt-7"
               />
