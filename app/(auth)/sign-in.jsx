@@ -24,7 +24,7 @@ const SignIn = () => {
   
   // Function to handle phone number input changes
   const handlePhoneChange = (text) => {
-    const numericText = text.replace(/[^0-9]/g, ''); // Remove non-numeric characters
+    const numericText = text.replace(/[^0-9+ ]/g, ''); // Remove non-numeric characters
     setForm({ ...form, phone: numericText });
   };
 
