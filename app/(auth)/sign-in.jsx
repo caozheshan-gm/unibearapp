@@ -40,13 +40,21 @@ const SignIn = () => {
             Logo in to odking app
           </Text>
 
-          <FormField
+          {/* <FormField
+            //phone number
             title="Phone Number"
             value={form.phone}
-            // handleChangeText={(e) => setForm({ ...form, phone: e })}
             handleChangeText={handlePhoneChange}
             otherStyles="mt-7"
             keyboardType="phone-pad"
+          /> */}
+
+          <FormField
+            title="Email"
+            value={form.email}
+            handleChangeText={(e) => setForm({ ...form, email: e })}      
+            otherStyles="mt-7"
+            keyboardType="email-address"
           />
 
           <FormField

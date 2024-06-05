@@ -6,6 +6,7 @@ import {icons} from '../../constants'
 import FormField from '../../components/FormField'
 import CustomButton from '../../components/CustomButton'
 import {Link} from 'expo-router'
+import {createUser} from '../../lib/appwrite'
 
 const SignUp = () => {
 
@@ -16,7 +17,7 @@ const SignUp = () => {
   })
 
   const submit = () => {
-    
+    createUser();
   }
 
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -24,7 +25,7 @@ const SignUp = () => {
 
   // Function to handle phone number input changes
   const handlePhoneChange = (text) => {
-    const numericText = text.replace(/[^0-9]/g, ''); // Remove non-numeric characters
+    const numericText = text.replace(/[^0-9+ ]/g, ''); // Remove non-numeric characters
     setForm({ ...form, phone: numericText });
   };
 
@@ -46,12 +47,21 @@ const SignUp = () => {
             otherStyles="mt-10"       
           />
 
-          <FormField
+          {/* <FormField
             title="Phone Number"
             value={form.phone}
             handleChangeText={handlePhoneChange}
             otherStyles="mt-10" 
             keyboardType="phone-pad"      
+          /> */}
+
+
+          <FormField
+            title="Email"
+            value={form.email}
+            handleChangeText={(e) => setForm({ ...form, email: e })}
+            otherStyles="mt-10" 
+            keyboardType="email-address"      
           />
 
           <FormField
