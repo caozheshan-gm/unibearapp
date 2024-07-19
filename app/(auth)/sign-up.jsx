@@ -1,33 +1,54 @@
-import { View, Text ,ScrollView,Image} from 'react-native'
+import { View, Text ,ScrollView,Image, Alert} from 'react-native'
 import {React,useState} from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import {images} from '../../constants'
 import {icons} from '../../constants'
 import FormField from '../../components/FormField'
 import CustomButton from '../../components/CustomButton'
-import {Link} from 'expo-router'
+import {Link, router} from 'expo-router'
 import {createUser} from '../../lib/appwrite'
+
 
 const SignUp = () => {
 
+  const [isSubmitting, setIsSubmitting] = useState(false)
 
   const [form,setForm] = useState({
-    phone: '',
-    password: '',
+    username: 'caozheshan',
+    email: '1654115747@qq.com',
+    password: 'Qq18329160099',
   })
 
-  const submit = () => {
-    createUser();
+  
+
+  const submit =async () => {
+    if(!form.username || !form.email || !form.password) {
+      Alert.alert('Error','Please fill all fields')
+    }
+
+    setIsSubmitting(true);
+
+    try{
+      const result =await createUser(form.email,form.password,form.username)
+
+      router.replace('/home') //set it to global state
+
+    } catch (error) {
+      Alert.alert('Error',error.message)
+    } finally {
+      setIsSubmitting(false)
+    }
+    
   }
 
-  const [isSubmitting, setIsSubmitting] = useState(false)
+
 
 
   // Function to handle phone number input changes
-  const handlePhoneChange = (text) => {
-    const numericText = text.replace(/[^0-9+ ]/g, ''); // Remove non-numeric characters
-    setForm({ ...form, phone: numericText });
-  };
+  // const handlePhoneChange = (text) => {
+  //   const numericText = text.replace(/[^0-9+ ]/g, ''); // Remove non-numeric characters
+  //   setForm({ ...form, phone: numericText });
+  // };
 
   return (
     <SafeAreaView className="bg-primary2 h-full">
