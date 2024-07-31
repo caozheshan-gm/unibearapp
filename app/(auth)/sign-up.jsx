@@ -14,7 +14,7 @@ const SignUp = () => {
   const [isSubmitting, setIsSubmitting] = useState(false)
 
   const [form,setForm] = useState({
-    username: 'caozheshan',
+    username: 'caozzz',
     email: '1654115747@qq.com',
     password: 'Qq18329160099',
   })
